@@ -10,7 +10,7 @@ class MainPageHandler(webapp2.RequestHandler):
         main_template = env.get_template('mainPage.html')
         self.response.out.write(main_template.render())
     def post(self):
-        complete_template = env.get_template('resultsPage.html')
+        complete_template = env.get_template('mainPage.html')
         template_variables = {
             'budget_name':self.request.get("budget_name"),
             'budget_spent':self.request.get("budget_spent"),

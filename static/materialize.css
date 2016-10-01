@@ -2235,10 +2235,11 @@ html {
 /**
  * Remove default margin.
  */
-body {
-  margin: 0;
-  background-image: url("../static/money.jpg");
-}
+
+ body {
+   margin: 0;
+   background-image: url("../static/money.jpg");
+ }
 
 /* HTML5 display definitions
    ========================================================================== */
