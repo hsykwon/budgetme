@@ -1,27 +1,42 @@
+<!DOCTYPE html>
+<!-- <div style="display:flex;justify-content:center;align-items:center;">
+ <div></div>
+</div> -->
 <html>
 <head>
-  <!--Import Google Icon Font-->
-  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-  <!--Let browser know website is optimized for mobile-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <!--Import Google Icon Font-->
+ <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ <!--Import materialize.css-->
+ <link type="text/css" rel="stylesheet" href="../css/materialize.css"  media="screen,projection"/>
+ <!--Let browser know website is optimized for mobile-->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
-<body background="static/money.jpg" style="opacity: 0.7;">
-  <!--Import jQuery before materialize.js-->
-  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script type="text/javascript" src="js/materialize.min.js"></script>
-  <form method="post" action="">
-    <p>What is your income?
-    <input name="income" type="number"></input></p>
-    <input type="submit" value="Update"></input>
-    <p>What is your budget?
-    <input name="budget" type="number"></input></p>
-    <input type="submit" value="Update"></input>
-    <p>How much have you spent?
-    <input name="spendings" type="number"></input></p>
-    <input type="submit" value="Update"></input>
-    <p>
-    </form>
+<body>
+ <!--Import jQuery before materialize.js-->
+ <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+ <script type="text/javascript" src="../js/materialize.js"></script>
+ <div class="container">
+   <h3 style="text-align:center;color:#26a69a;text-shadow:3px 3px 6px #000;"><strong>budget<bold style="color:#fff">me</bold></strong><br></h5>
+     <div class="container">
+       <form method="post" action="">
+         <p>What is your income?
+           <input name="income" type="number"></input><a class="waves-effect waves-light btn"><input type="submit" value="Update"></input></a>
+         </p>
+         <p>What is your budget?
+           <input name="budget" type="number"></input><a class="waves-effect waves-light btn"><input type="submit" value="Update"></input></a>
+         </p>
+         <p>How much have you spent?
+           <input name="spendings" type="number"></input><a class="waves-effect waves-light btn"><input type="submit" value="Update"></input></a>
+         </p>
+         <br>
+       </form>
+     </div>
+ </div>
+ <footer class="page-footer">
+   <div class="footer-copyright">
+     <div class="container">
+     <a class="grey-text text-lighten-4 right" href="#!">About SHAA</a>
+     </div>
+ </div>
 </body>
 </html>
