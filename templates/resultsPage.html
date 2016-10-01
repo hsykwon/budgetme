@@ -15,7 +15,7 @@
    <div class="container">
      <h1 style="text-align:center;color:#26a69a;text-shadow:3px 3px 6px #000;"><strong>budget<bold style="color:#fff">me</bold></strong><br></h1>
        <div class="container">
-         <form method="get" action="">
+         <!-- <form method="post" action=""> -->
            <p>What is your income?
              <input name="income" type="number" value={{income}}></input>
            </p>
@@ -31,21 +31,19 @@
      </div>
 
      <div id="modal1" class="modal">
-       <form method="render" action="">
-         <div class="modal-content">
-           <h1 style="text-align:center;color:#26a69a;text-shadow:3px 3px 6px #000;"><strong>budget<bold style="color:#fff">me</bold></strong><br></h1>
-           <p> hi {{budget_blah}} {{income_blah}} {{spendings_blah}} </p>
-         </div>
-         <div class="modal-footer">
-           <a href="/" class=" modal-action modal-close waves-effect waves-green btn-flat">close</a>
-         </div>
-       </form>
+       <div class="modal-content">
+         <h1 style="text-align:center;color:#26a69a;text-shadow:3px 3px 6px #000;"><strong>budget<bold style="color:#fff">me</bold></strong><br></h1>
+       </div>
+       <p> {{budget_total}} </p>
+       <div class="modal-footer">
+         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">close</a>
+       </div>
      </div>
 
      <footer class="page-footer">
        <div class="footer-copyright">
          <div class="container">
-           <a class="grey-text text-lighten-4 right" href="/about">About SHAA</a>
+           <a class="grey-text text-lighten-4 right" href="#!">About SHAA</a>
          </div>
          <button align=center type="button" onclick="location.href='/signOutHandler'" class="btn waves-effect waves-light"
             value="sign out" style="background-color:white;back:0.8;margin-left:9px;margin-bottom:5px;color:#26a69a;"id="button">sign out</button>
