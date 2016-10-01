@@ -9,6 +9,10 @@ global budget_total
 budget_total = []
 global spendings_total
 spendings_total = []
+global savings_total
+savings_total = []
+global goals_total
+goals_total = [" "]
 
 env = jinja2.Environment(loader=jinja2.FileSystemLoader('templates'))
 
@@ -30,10 +34,23 @@ class LoginHandler(webapp2.RequestHandler):
             if spendings_main != "":
                 spendings_main = int(spendings_main)
                 spendings_total.append(spendings_main)
+            # budget_main = int(budget_main)
+            # spendings_main = int(spendings_main)
+            if budget_main != "" and spendings_main != "":
+                savings_main = int(budget_main)-int(spendings_main)
+                savings_total.append(savings_main)
+            goals_main = self.request.get("goals")
+            if goals_main != "":
+                goals_main = self.request.get("goals")
+                goals_total[0] = self.request.get("goals")
+            elif goals_main == "":
+                goals_main = goals_total[0]
             template_variables = {
                 'income_blah': sum(income_total),
                 'budget_blah': sum(budget_total),
                 'spendings_blah': sum(spendings_total),
+                'savings_blah': sum(savings_total),
+                'goals_blah': goals_main,
             }
             complete_template = env.get_template('mainPage.html')
             self.response.out.write(complete_template.render(template_variables))
