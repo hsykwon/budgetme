@@ -2,6 +2,7 @@ import webapp2
 import jinja2
 import os
 from google.appengine.api import users
+
 global income_total
 income_total = 0
 global budget_total
