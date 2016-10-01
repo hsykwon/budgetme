@@ -16,11 +16,24 @@ goals_total = [" "]
 
 env = jinja2.Environment(loader=jinja2.FileSystemLoader('templates'))
 
+class MainPageHandler(webapp2.RequestHandler):
+    def get(self):
+        main_template = env.get_template('mainPage.html')
+        self.response.write(main_template.render())
+    def post(self):
+        complete_template = env.get_template('mainPage.html')
+        template_variables = {
+             'income':self.request.get("income"),
+             'budget':self.request.get("budget"),
+             'spendings':self.request.get("spendings"),
+             }
+        self.response.out.write(complete_template.render(template_variables))
+
 class LoginHandler(webapp2.RequestHandler):
     def get(self):
 
         user = users.get_current_user()
-        template = env.get_template('mainPage.html')
+        template = jinja_env.get_template('mainPage.html')
         if user:
             income_main = self.request.get("income")
             if income_main != "":
