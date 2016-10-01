@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <!--Import Google Icon Font-->
-  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="../static/materialize.css"  media="screen,projection"/>
-  <link rel="stylesheet" type="text/css" href="../static/layout.css">
-  <!--Let browser know website is optimized for mobile-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-</head>
-<body>
-  <!--Import jQuery before materialize.js-->
-  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script type="text/javascript" src="../static/materialize.js"></script>
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
-  <div class="g-signin2" data-onsuccess="onSignIn"></div>
-    <div class="container">
-      <input type="submit" value="Login"></input></p>
-      <br>
-    </div>
-</body>
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../static/materialize.css"  media="screen,projection"/>
+    <link rel="stylesheet" type="text/css" href="../static/layout.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <body>
+    <!--Import jQuery before materialize.js-->
+    <div style="position: absolute; margin: 0;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);">
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="../static/materialize.js"></script>
+      <script src="https://apis.google.com/js/platform.js" async defer></script>
+      <h1 style="text-align:center;color:#26a69a;text-shadow:3px 3px 6px #000;"><strong>budget<bold style="color:#fff">me</bold></strong><br></h1>
+      <div class="container" style="text-align: center;">
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            <a class="waves-effect waves-light btn" href="{{login}}"><span>SIGN IN</span></a>
+            <br>
+        </div>
+      </div>`
+  </div>
+  </body>
 </html>

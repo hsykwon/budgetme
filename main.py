@@ -34,8 +34,6 @@ class LoginHandler(webapp2.RequestHandler):
             if spendings_main != "":
                 spendings_main = int(spendings_main)
                 spendings_total.append(spendings_main)
-            # budget_main = int(budget_main)
-            # spendings_main = int(spendings_main)
             if budget_main != "" and spendings_main != "":
                 savings_main = int(budget_main)-int(spendings_main)
                 savings_total.append(savings_main)
@@ -55,7 +53,7 @@ class LoginHandler(webapp2.RequestHandler):
             complete_template = env.get_template('mainPage.html')
             self.response.out.write(complete_template.render(template_variables))
         else:
-            template = env.get_template('signIn.html')
+            template = env.get_template('login.html')
             greeting = ('<a href="%s"></a>' % users.create_login_url('/'))
             self.response.out.write('<html><body>%s</body></html>' % greeting)
             variables = {
