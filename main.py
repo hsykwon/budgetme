@@ -18,8 +18,16 @@ class MainPageHandler(webapp2.RequestHandler):
 
 class LoginHandler(webapp2.RequestHandler):
     def get(self):
-        login_template = env.get_template('login.html')
-        self.response.out.write(login_template.render())
+        template = jinja_environment.get_tempate('signIn.html')
+        user = users.get_current_user()
+        if user:
+            greeting = ('Welcome, %s! (<a href="%s">sign out</a>)' %
+                (user.nickname(), users.create_logout_url('/')))
+        else:
+            greeting = ('<a href="%s">Sign in or register</a>.' %
+                users.create_login_url('/'))
+
+        self.response.out.write('<html><body>%s</body></html>' % greeting)
 
 app = webapp2.WSGIApplication([
  ('/', MainPageHandler),
