@@ -33,7 +33,7 @@ class LoginHandler(webapp2.RequestHandler):
     def get(self):
 
         user = users.get_current_user()
-        template = jinja_env.get_template('mainPage.html')
+        template = env.get_template('mainPage.html')
         if user:
             income_main = self.request.get("income")
             if income_main != "":
