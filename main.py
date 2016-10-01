@@ -4,11 +4,11 @@ import os
 from google.appengine.api import users
 
 global income_total
-income_total = 0
+income_total = []
 global budget_total
-budget_total = 0
-global savings_total
-savings_total = 0
+budget_total = []
+global spendings_total
+spendings_total = []
 
 env = jinja2.Environment(loader=jinja2.FileSystemLoader('templates'))
 
@@ -20,23 +20,20 @@ class LoginHandler(webapp2.RequestHandler):
         if user:
             income_main = self.request.get("income")
             if income_main != "":
-                income_total = income_total + income_main
-                # income_temp = income_total
-                income_main = income_total
+                income_main = int(income_main)
+                income_total.append(income_main)
             budget_main = self.request.get("budget")
             if budget_main != "":
-                budget_total = budget_total + budget_main
-                # budget_temp = budget_total
-                budget_main = budget_total
+                budget_main = int(budget_main)
+                budget_total.append(budget_main)
             spendings_main = self.request.get("spendings")
             if spendings_main != "":
-                spendings_total = spendings_total + spendings_main
-                # spendings_temp = spendings_total
-                spendings_main = spendings_total
+                spendings_main = int(spendings_main)
+                spendings_total.append(spendings_main)
             template_variables = {
-                'income_blah': income_main,
-                'budget_blah':budget_main,
-                'spendings_blah':spendings_main,
+                'income_blah': sum(income_total),
+                'budget_blah': sum(budget_total),
+                'spendings_blah': sum(spendings_total),
             }
             complete_template = env.get_template('mainPage.html')
             self.response.out.write(complete_template.render(template_variables))
