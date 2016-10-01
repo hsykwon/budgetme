@@ -1,13 +1,18 @@
 <html>
 
   <form method="post" action="">
-    <p>Where is the money going towards?
-    <input name="budget_name" type="text"></input></p>
-    <p>How much are you spending on this?
-    <input name="budget_spent" type="number" value={{budget_spent}}></input></p>
+    <p>What is your income?
+    <input name="income" type="number"></input></p>
+    <input type="submit" value="Update"></input>
+    <p>What is your budget?
+    <input name="budget" type="number"></input></p>
+    <input type="submit" value="Update"></input>
+    <p>How much have you spent?
+    <input name="spendings" type="number"></input></p>
+    <input type="submit" value="Update"></input>
+    <p>
 
-    <input type="submit" value="Calculate your budget!"></input>
-    <p>Your budget: {{budget_spent}}<p>
+
 
   </form>
 </html>
