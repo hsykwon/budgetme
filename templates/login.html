@@ -8,6 +8,20 @@
     <link rel="stylesheet" type="text/css" href="../static/layout.css">
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <script src="/static/tracking/build/tracking-min.js"></script>
+    <script src="/static/tracking/build/data/face-min.js"></script>
+    <!-- <script src="../../dat-gui/build/dat.gui.min.js"></script> -->
+    <!-- <script src="/static/tracking/assets/stats.min.js"></script> -->
+
+    <style>
+    video, canvas {
+      margin-left: 230px;
+      margin-top: 120px;
+      position: absolute;
+    }
+    </style>
+
   </head>
   <body>
     <!--Import jQuery before materialize.js-->
@@ -17,11 +31,50 @@
       <script src="https://apis.google.com/js/platform.js" async defer></script>
       <h1 style="text-align:center;color:#26a69a;text-shadow:3px 3px 6px #000;"><strong>budget<bold style="color:#fff">me</bold></strong><br></h1>
       <div class="container" style="text-align: center;">
+
+        <video id="video" width="320" height="240" preload autoplay loop muted></video>
+        <canvas id="canvas" width="320" height="240"></canvas>
+
         <div class="g-signin2" data-onsuccess="onSignIn"></div>
-            <a class="waves-effect waves-light btn" href="{{login}}"><span>SIGN IN</span></a>
+            <a class="waves-effect waves-light btn signin-button" href="#"><span>SIGN IN</span></a>
             <br>
         </div>
       </div>`
-  </div>
+    </div>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.signin-button').on('click', function(){
+          console.log("hi")
+          var video = document.getElementById('video');
+          var canvas = document.getElementById('canvas');
+          var context = canvas.getContext('2d');
+          var tracker = new tracking.ObjectTracker('face');
+          tracker.setInitialScale(4);
+          tracker.setStepSize(2);
+          tracker.setEdgesDensity(0.1);
+          tracking.track('#video', tracker, { camera: true });
+          tracker.on('track', function(event) {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+
+            if(event.data.length == 2){
+              window.location = '{{login}}';
+            }
+            event.data.forEach(function(rect) {
+              context.strokeStyle = '#a64ceb';
+              context.strokeRect(rect.x, rect.y, rect.width, rect.height);
+              context.font = '11px Helvetica';
+              context.fillStyle = "#fff";
+              context.fillText('x: ' + rect.x + 'px', rect.x + rect.width + 5, rect.y + 11);
+              context.fillText('y: ' + rect.y + 'px', rect.x + rect.width + 5, rect.y + 22);
+            });
+          });
+          // var gui = new dat.GUI();
+          // gui.add(tracker, 'edgesDensity', 0.1, 0.5).step(0.01);
+          // gui.add(tracker, 'initialScale', 1.0, 10.0).step(0.1);
+          // gui.add(tracker, 'stepSize', 1, 5).step(0.1);
+        })
+      })
+    </script>
   </body>
 </html>
