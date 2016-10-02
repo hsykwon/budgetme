@@ -12,7 +12,7 @@ function validateForm() {
   x = document.getElementById("finances").value;
 
   if (isNaN(x) || x < 0) {
-    text = ("Please input a parameter for questions 1, 2, and 3, or type \"0\" for the parameters you wish not to complete");
+    text = ("Please input a number for income, budget, and spending or type \"0\" for the parameters you wish not to complete");
     document.getElementById("blue").innerHTML = text;
   }
 }
@@ -7475,6 +7475,12 @@ Picker.extend( 'pickadate', DatePicker )
 
   $(document).ready(function(){
     $('.tooltipped').tooltip({delay: 50});
+  });
+
+  $(document).ready(function(){
+    $('.collapsible').collapsible({
+      accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    });
   });
 
     $.fn.carousel = function(methodOrOptions) {
