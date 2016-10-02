@@ -7460,6 +7460,9 @@ Picker.extend( 'pickadate', DatePicker )
     }
   };
 
+  $(document).ready(function(){
+    $('.tooltipped').tooltip({delay: 50});
+  });
 
     $.fn.carousel = function(methodOrOptions) {
       if ( methods[methodOrOptions] ) {
