@@ -62,9 +62,29 @@
 
        <form method="render" action="">
          <div class="modal-content">
-           <h1 style="text-align:center;color:#26a69a;text-shadow:3px 3px 6px #000;"><strong>budget<bold style="color:#fff">me</bold></strong><br></h1>
+           <h1 style="text-align:center;color:#26a69a;text-shadow:3px 3px 6px #000;"><strong>about<bold style="color:#fff">us</bold></strong><br></h1>
            <!-- <img src="pic_mountain.jpg" alt="Mountain View" style="width:304px;height:228px;"> --> INSERT PIC
-         </div>
+           <p>Hello! We are SHAA, comprised of Sandy, Hannah, Amy, and Adrian. During our experience at SD Hacks 2016, we decided to develop this web application with your financial concerns in mind. As your typical college students, we constantly rake through the week with little to no leeway for monetary freedom and long for a user-friendly, straightforward way to manage our spendings. We hope this application helps make budgeting simple and painless to do. Thank you for taking the time to visit and use our web application!</p>
+           <h3 style="text-align:center;color:#26a69a;"><strong>FAQs</strong><br></h3>
+           <div class="w3-container">
+            <div class="w3-accordion w3-light-grey">
+
+               <button onclick="myFunction('Demo1')" class="w3-btn-block w3-left-align">What is this app's function?</button>
+               <div id="Demo1" class="w3-accordion-content w3-container">
+                 <p>This serves to accept income, budget, and spending parameters from the user's input and calculates the total accumulated savings. The app features a two-step security feature. In order for the user to proceed to the G-mail login, the camera needs to be able to
+                 recognize two human faces. Once two human faces are recognized, the site will proceed to the G-mail login.</p>
+               </div>
+               <button onclick="myFunction('Demo2')" class="w3-btn-block w3-left-align">What did you use in this web app?</button>
+               <div id="Demo2" class="w3-accordion-content w3-container">
+                 <p>We used a combination of HTML, CSS, JavaScript, JQuery, Python, App Engine, facial recognition API, and Google's material design called Materialize.</p>
+               </div>
+                <button onclick="myFunction('Demo3')" class="w3-btn-block w3-left-align">Why SHAA?</button>
+                 <div id="Demo3" class="w3-accordion-content w3-container">
+                   <p>We wanted to make something that we were proud of, something that we can present by saying "SHAA"!</p>
+                 </div>
+               </div>
+            </div>
+           </div>
          <div class="modal-footer">
            <a href="/" class=" modal-action modal-close waves-effect waves-green btn-flat">close</a>
          </div>
@@ -78,5 +98,6 @@
          <button align=center type="button" onclick="location.href='/signOutHandler'" class="btn waves-effect waves-light"
             value="sign out" style="background-color:white;back:0.8;margin-left:9px;margin-bottom:5px;color:#26a69a;"id="button">sign out</button>
        </div>
+
   </body>
 </html>
