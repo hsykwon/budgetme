@@ -4,6 +4,19 @@
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
 // Check for jQuery.
+
+// used to check whether parameters 1, 2, and 3 are filled
+function validateForm() {
+  var x, text;
+
+  x = document.getElementById("finances").value;
+
+  if (isNaN(x) || x < 0) {
+    text = ("Please input a parameter for questions 1, 2, and 3, or type \"0\" for the parameters you wish not to complete");
+    document.getElementById("blue").innerHTML = text;
+  }
+}
+
 if (typeof(jQuery) === 'undefined') {
   var jQuery;
   // Check if require is a defined function.

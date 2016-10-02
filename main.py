@@ -40,17 +40,21 @@ class LoginHandler(webapp2.RequestHandler):
                 income_main = int(income_main)
                 income_total.append(income_main)
             budget_main = self.request.get("budget")
+
             if budget_main != "":
                 budget_main = int(budget_main)
                 budget_total.append(budget_main)
             spendings_main = self.request.get("spendings")
+
             if spendings_main != "":
                 spendings_main = int(spendings_main)
                 spendings_total.append(spendings_main)
+
             if budget_main != "" and spendings_main != "" and income_main != "":
                 savings_main = int(budget_main)-int(spendings_main)+int(income_main)
                 savings_total.append(savings_main)
             goals_main = self.request.get("goals")
+
             if goals_main != "":
                 goals_main = self.request.get("goals")
                 goals_total[0] = self.request.get("goals")
