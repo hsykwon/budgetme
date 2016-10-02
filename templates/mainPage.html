@@ -17,13 +17,10 @@
    <div class="container">
      <h1 style="text-align:center;color:#26a69a;text-shadow:3px 3px 6px #000;"><strong>budget<bold style="color:#fff">me</bold></strong><br></h1>
        <div class="container">
-<<<<<<< Updated upstream
-         <form method="get" action="">
-           <p><a class="tooltipped" data-position="top" data-delay="50" data-tooltip="How much money are you getting for this time period?" style="color:black">What is your income?</a>
-=======
+
          <form method="get" action="" onclick="validateForm()" id="finances">
-           <p>What is your income?
->>>>>>> Stashed changes
+           <p><a class="tooltipped" data-position="top" data-delay="50" data-tooltip="How much money are you getting for this time period?" style="color:black">What is your income?</a>
+
              <input name="income" type="number" value={{income}}></input>
            </p>
            <p><a class="tooltipped" data-position="top" data-delay="50" data-tooltip="How much do you want to save for this time period?" style="color:black">What is your budget?</a>
@@ -32,18 +29,8 @@
            <p><a class="tooltipped" data-position="top" data-delay="50" data-tooltip="How much did you spend for this time period?" style="color:black">How much have you spent?</a>
              <input name="spendings" type="number" value={{spending}}></input>
            </p>
-<<<<<<< Updated upstream
            <p><a class="tooltipped" data-position="top" data-delay="50" data-tooltip="How much do you want to accumulate overall to reach your goal?" style="color:black">How much do you want to save?</a>
              <input name="goals" type="number" value={{goals}}></input><a class="waves-effect waves-light btn"><input type="submit" value="Calculate"></input> </a><a class="waves-effect waves-light btn modal-trigger" style="float:right"href="#modal1">View</a>
-=======
-           <p>How much do you want to save?
-             <input name="goals" type="number" value={{goals}}></input>
-
-             <!-- submit button -->
-             <a class="waves-effect waves-light btn"><input type="submit" value="Calculate"></input> </a>
-             <!-- modal button -->
-              <a class="waves-effect waves-light btn modal-trigger" style="float:right"href="#modal1">View</a>
->>>>>>> Stashed changes
            </p>
 
            <b><p id="blue"></p></b>
@@ -71,7 +58,6 @@
 
      </div>
 
-<<<<<<< Updated upstream
      <div id="modal2" class="modal">
 
        <form method="render" action="">
@@ -86,9 +72,6 @@
 
      </div>
 
-=======
-<!-- page footer begins here -->
->>>>>>> Stashed changes
      <footer class="page-footer">
        <div class="footer-copyright">
            <a class="grey-text text-lighten-4 right modal-trigger" style="margin-right:12px" href="#modal2">About SHAA</a>
