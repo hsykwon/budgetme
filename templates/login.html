@@ -14,26 +14,34 @@
 
     <style>
     video, canvas {
-      position: relative;
+      /*margin-left: 230px;
+      margin-top: 120px;
+      position: absolute;*/
+      position: absolute;
+      bottom: 135px;
     }
     </style>
 
   </head>
   <body>
     <!--Import jQuery before materialize.js-->
+
     <div style="position: absolute; margin: 0;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);">
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script type="text/javascript" src="../static/materialize.js"></script>
       <script src="https://apis.google.com/js/platform.js" async defer></script>
+      <video id="video" width="320" height="240" preload autoplay loop muted class="center-align"></video>
+      <canvas style="margin-bottom:0px" id="canvas" width="320" height="240" style="position:relative;" class="center-align"></canvas>
+
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
       <h1 style="text-align:center;color:#26a69a;text-shadow:3px 3px 6px #000;"><strong>budget<bold style="color:#fff">me</bold></strong><br></h1>
       <div class="container" style="text-align: center;">
 
-        <video id="video" width="320" height="240" preload autoplay loop muted></video>
-        <canvas id="canvas" width="320" height="20"></canvas>
+  <a class="waves-effect waves-light btn signin-button" href="#"><span>SIGN IN</span></a>
 
-        <div class="g-signin2" data-onsuccess="onSignIn"></div>
-            <a class="waves-effect waves-light btn signin-button" href="#"><span>SIGN IN</span></a>
             <br>
+
         </div>
       </div>`
     </div>
