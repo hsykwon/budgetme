@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!--Import Google Icon Font-->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="../static/materialize.css"  media="screen,projection"/>
     <link rel="stylesheet" type="text/css" href="../static/layout.css">
@@ -16,9 +14,7 @@
 
     <style>
     video, canvas {
-      margin-left: 230px;
-      margin-top: 120px;
-      position: absolute;
+      position: relative;
     }
     </style>
 
@@ -33,7 +29,7 @@
       <div class="container" style="text-align: center;">
 
         <video id="video" width="320" height="240" preload autoplay loop muted></video>
-        <canvas id="canvas" width="320" height="240"></canvas>
+        <canvas id="canvas" width="320" height="20"></canvas>
 
         <div class="g-signin2" data-onsuccess="onSignIn"></div>
             <a class="waves-effect waves-light btn signin-button" href="#"><span>SIGN IN</span></a>
